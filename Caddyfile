@@ -1,0 +1,10 @@
+# Public HTTPS front for the Chat API on host port 8080.
+# API_DOMAIN must be a DNS name. The config server on port 8887 is not proxied.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$API_DOMAIN} {
+	reverse_proxy host.docker.internal:8080
+}
